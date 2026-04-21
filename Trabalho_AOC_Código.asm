@@ -1,15 +1,15 @@
 	.data
 
-instrucaoPrincipal: .asciiz "Insira (Temperatura FumaÁa) separadas por espaÁo ou insira o cÛdigo 'b' para ativaÁ„o manual do alarme, ou o cÛdigo 'l' para listar as ultimas leituras. Digite 'e' para encerar.\n"
+instrucaoPrincipal: .asciiz "Insira (Temperatura Fuma√ßa) separadas por espa√ßo ou insira o c√≥digo 'b' para ativa√ß√£o manual do alarme, ou o c√≥digo 'l' para listar as ultimas leituras. Digite 'e' para encerar.\n"
 ResultadoAlarme1: .asciiz "RISCO: "
 ResultadoAlarme2: .asciiz "/100\n"
 Estado: .asciiz "ESTADO: "
 Normal: .asciiz "normal\n"
 Alerta: .asciiz "alerta\n"
-Atencao: .asciiz "atenÁao\n"
-Evacuacao: .asciiz "evacuaÁ„o\n"
+Atencao: .asciiz "aten√ßao\n"
+Evacuacao: .asciiz "evacua√ß√£o\n"
 ErroLeitura: .asciiz "ERRO: O sistema detectou um erro na leitura de dados, verificar sensores.\n"
-Label: .asciiz "(Temperatura | fumaÁa)\n"
+Label: .asciiz "(Temperatura | fuma√ßa)\n"
 LF: .asciiz "\n"
 Manual: .asciiz "Alarme ativado manualmente\n"
 ErroListarLeitura: .asciiz "ERRO: Nenhuma leitura feita.\n"
@@ -65,7 +65,7 @@ main:
 	j main2
 	
 lendoEntrada:
-	#a0 endereÁo da string, v0 e v1 numeros lidos.
+	#a0 endere√ßo da string, v0 e v1 numeros lidos.
 	li $v0, 0
 	li $t0, 0 #contador de leituras
 	lb $t1, 0($a0)
@@ -113,7 +113,7 @@ lendoEntrada:
 	jr $ra
 
 GravarLeitura:
-#a0 valor a ser gravado, a1 total de leituras feitas, a2 lista onde a leitura ser· gravada
+#a0 valor a ser gravado, a1 total de leituras feitas, a2 lista onde a leitura ser√° gravada
 	
 	add $a1, $a1, -1
 	rem $a1, $a1, 10
@@ -163,7 +163,7 @@ ListarUltimasLeituras:
 		j continua
 
 CalcularRisco:
-#a0 temperatura, a1 fumaÁa, v0 risco]
+#a0 temperatura, a1 fuma√ßa, v0 risco]
 	li $t1, 0
 	mul $a0, $a0, 18
 	mul $a1, $a1, 32
